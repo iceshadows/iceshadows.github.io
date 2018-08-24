@@ -23,8 +23,7 @@ body {
 .container .left-bar {
  position:fixed;
  padding:0 20px;
- background-image:"background.jpg";
- color:#6b7386;
+ background-color:#336666;
  box-sizing:border-box;
  flex-direction:column;
  height:100vh;
@@ -58,6 +57,7 @@ body {
  text-align:center
 }
 .left-bar .nav {
+ color:#336666;
  flex:1;
  -webkit-box-flex:1;
  flex-grow:1
@@ -122,7 +122,7 @@ body {
  z-index:100;
  bottom:1px;
  width:200px;
- background-image:"background.jpg"
+ background:#336666
 }
 .main #mainContent {
  max-width:1200px
