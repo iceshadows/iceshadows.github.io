@@ -7,12 +7,95 @@
     <title>青岛大学数软学院网址导航</title>
     <link rel="shortcut icon" href="shuruan.ico" />
     <link rel="stylesheet" href=" css/iconfont.css">
-	<link rel="stylesheet" href=" css/iconfont1.css">
+    <link rel="stylesheet" href=" css/iconfont1.css">
     <link rel="stylesheet" href="../plug-in/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="http://www.jsdaima.com/Upload/1414382495/jquery.cookie.js"></script>
+    <!--背景 图片拉伸并布满整个屏幕-->
+    <style type="text/css">
+    body{
+        background:url(./background.jpg)  no-repeat center center;
+        background-size:cover;
+        background-attachment:fixed;
+     
+        background-color:#CCCCCC;
+     
+     }
+     </style>
+    <!--弹窗广告实现-->
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .alert_windows {
+            display: none;
+            position: absolute;
+            z-index: 10;
+            width: 400px;
+            height: 300px;
+            background: darkslategrey;
+        }
+
+        .alert_windows span {
+            float: right;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font: 15px/30px Microsoft Yahei;
+            cursor: progress ;
+            color:#333;
+            background : lightblue;
+        }
+
+        .alert_windows image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .alert_windows span:hover {
+            color: #EEE;
+            background: red;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            if ($.cookie("isClose") != 'yes') {
+                var winWid = $(window).width() / 2 - $('.alert_windows').width() / 2;
+                var winHig = $(window).height() / 2 - $('.alert_windows').height() / 2;
+                $(".alert_windows").css({
+                    "left": winWid,
+                    "top": -winHig * 2
+                }); //自上而下
+                $(".alert_windows").show();
+                $(".alert_windows").animate({
+                    "left": winWid,
+                    "top": winHig
+                }, 1000);
+                $(".alert_windows span").click(function () {
+                    $(this).parent().fadeOut(500);
+                    $.cookie("isClose", 'yes', {
+                        expires: 1 / 8640
+                    }); //测试十秒
+                });
+            }
+        });
+    </script>
 </head>
 
-<body background = "background.jpg">
+<body background="background.jpg">
+    <!--弹窗广告内容 感谢@秋叶随风、@李同学 @Eve-->
+    <div class="alert_windows">
+        <image><img src="img/tuiguang1.jpg"></image> <span>X</span>
+    </div>
+    <script type="text/javascript">
+        function stop() {
+            return false;
+        }
+        document.oncontextmenu = stop;
+    </script>
     <div class="container" id="container">
         <aside class="left-bar" id="leftBar">
             <div class="title">
@@ -20,12 +103,18 @@
             </div>
             <nav class="nav">
                 <div class="item active"><a href="">Iceshdaow制作整合</a><i class="line"></i>
-				</div>
+                </div>
                 <!--本地计数器实现-->
-				<script type="text/javascript">
-if (localStorage.pagecount){    localStorage.pagecount=Number(localStorage.pagecount) +1;}else{    localStorage.pagecount=1;}document.write("访问数: " + localStorage.pagecount + " 次.");</script>
+                <script type="text/javascript">
+                    if (localStorage.pagecount) {
+                        localStorage.pagecount = Number(localStorage.pagecount) + 1;
+                    } else {
+                        localStorage.pagecount = 1;
+                    }
+                    document.write("访问数: " + localStorage.pagecount + " 次.");
+                </script>
                 <ul class="nav-item" id="navItem">
-					<li><a href="#wechat" class="active"><i class="iconfont icon-weixin"></i>公众平台</a></li>
+                    <li><a href="#wechat" class="active"><i class="iconfont icon-weixin"></i>公众平台</a></li>
                     <li><a href="#class" class="active"><i class="iconfont icon-daohang2"></i>我在数软</a></li>
                     <li><a href="#study"><i class="iconfont icon-xuexi1"></i>学无止境</a></li>
                     <li><a href="#bbs" class="active"><i class="iconfont icon-shequ"></i>开发社区</a></li>
@@ -40,39 +129,53 @@ if (localStorage.pagecount){    localStorage.pagecount=Number(localStorage.pagec
             <div id="mainContent">
                 <!-- 手机端菜单 -->
                 <div id="menu-box">
-                   <div id="menu">
-                       <input type="checkbox" id="menu-form">
-                       <label for="menu-form" class="menu-spin">
-                        <div class="line diagonal line-1"></div>
-                        <div class="line horizontal"></div>
-                        <div class="line diagonal line-2"></div>
-                      </label>
+                    <div id="menu">
+                        <input type="checkbox" id="menu-form">
+                        <label for="menu-form" class="menu-spin">
+                            <div class="line diagonal line-1"></div>
+                            <div class="line horizontal"></div>
+                            <div class="line diagonal line-2"></div>
+                        </label>
                     </div>
                 </div>
-				<!-- 微信公众平台-->
-				<div class = "box">
-					<a href="#" name="wechat"></a>
+                <!-- 微信公众平台-->
+                <div class="box">
+                    <a href="#" name="wechat"></a>
                     <div class="sub-category">
                         <div><i class="iconfont icon-weixin"></i>公众平台</div>
-						<div><img src="img/wechat-shuruan.jpg"></div>
+                        <div><img src="img/wechat-shuruan.jpg" ;width: 100%; height: auto;max-width: 100%; display: block;></div>
                     </div>
-				</div>
-				<!-- 横向公告-->
-				<div class = "box">
-					<div id="scroll_div" class="fl"> 
-						<style type="text/css">
-						.pad_right{ padding-right:2em;}
-						#scroll_div {height:30px;overflow: hidden;white-space: nowrap;width:410px;margin-left:10px;font-size:200%}
-						#scroll_begin,#scroll_end {display: inline;}
-						</style>
-						<div id="scroll_begin">
-						我在青大 <span class="pad_right">等你</span>
-						我在青大 <span class="pad_right">等你</span>
-						我在青大 <span class="pad_right">等你</span>
-						</div> 
-						<div id="scroll_end"></div>
-					</div> 
-				</div>
+                </div>
+                <!-- 横向公告-->
+                <div class="box">
+                    <div id="scroll_div" class="fl">
+                        <style type="text/css">
+                            .pad_right {
+                                padding-right: 2em;
+                            }
+
+                            #scroll_div {
+                                height: 30px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                width: 410px;
+                                margin-left: 10px;
+                                font-size: 200%
+                            }
+
+                            #scroll_begin,
+                            #scroll_end {
+                                display: inline;
+                            }
+                        </style>
+                        <div id="scroll_begin">
+                            我在青大 <span class="pad_right">等你</span>
+                            我在青大 <span class="pad_right">等你</span>
+                            我在青大 <span class="pad_right">等你</span>
+                        </div>
+                        <div id="scroll_end"></div>
+                    </div>
+                </div>
                 <!-- 我在数软 -->
                 <div class="box">
                     <a href="#" name="class"></a>
@@ -80,13 +183,13 @@ if (localStorage.pagecount){    localStorage.pagecount=Number(localStorage.pagec
                         <div><i class="iconfont icon-daohang2"></i>我在数软</div>
                     </div>
                     <div>
-						<a target="_blank" href="http://dsse.qdu.edu.cn/">
+                        <a target="_blank" href="http://dsse.qdu.edu.cn/">
                             <div class="item">
                                 <div class="logo"><img src="img/shuruan.png" alt="phpems"> 青大数软学院官网</div>
                                 <div class="desc">咱院的官方网站，强势置顶</div>
                             </div>
                         </a>
-						<a target="_blank" href="http://jw.qdu.edu.cn/academic/common/security/electiveLogin.jsp">
+                        <a target="_blank" href="http://jw.qdu.edu.cn/academic/common/security/electiveLogin.jsp">
                             <div class="item">
                                 <div class="logo"><img src="img/jiaowu.jpg" alt="phpems"> 青大教务选课入口</div>
                                 <div class="desc">放在校官网前，我觉得有必要</div>
@@ -104,51 +207,51 @@ if (localStorage.pagecount){    localStorage.pagecount=Number(localStorage.pagec
                                 <div class="desc">青大安全考试平台，入学必备</div>
                             </div>
                         </a>
-						<a target="_blank" href="http://www.antlinker.com/down.html">
+                        <a target="_blank" href="http://www.antlinker.com/down.html">
                             <div class="item">
                                 <div class="logo"><img src="img/antlinker.ico" alt="phpems"> 校园集结号</div>
                                 <div class="desc">青大官方合作APP，报到等都需要</div>
                             </div>
                         </a>
-						<a target="_blank" href="http://www.yiban.cn/">
+                        <a target="_blank" href="http://www.yiban.cn/">
                             <div class="item">
                                 <div class="logo"><img src="img/yiban.ico" alt="phpems"> 易班</div>
                                 <div class="desc">教育部强推，学校官推，下吧，肯定有用</div>
                             </div>
                         </a>
-						<a target="_blank" href="http://nic.qdu.edu.cn/">
+                        <a target="_blank" href="http://nic.qdu.edu.cn/">
                             <div class="item">
                                 <div class="logo"><img src="img/class-qdu.png" alt="phpems"> 青大NIC中心</div>
                                 <div class="desc">通知书上写的与电子校园卡有关的网站，留着也罢</div>
                             </div>
                         </a>
-						<a target="_blank" href="http://lib.qdu.edu.cn/">
+                        <a target="_blank" href="http://lib.qdu.edu.cn/">
                             <div class="item">
                                 <div class="logo"><img src="img/dingtu.jpg" alt="phpems"> 青大图书馆</div>
                                 <div class="desc">青大图书馆，校园图书馆</div>
                             </div>
                         </a>
-						<a target="_blank" href="https://qduoj.com/">
+                        <a target="_blank" href="https://qduoj.com/">
                             <div class="item">
                                 <div class="logo"><img src="img/OJ.ico" alt="phpems"> 青大OJ平台</div>
                                 <div class="desc">OJ，学校原创的选拔平台</div>
                             </div>
                         </a>
-						<a target="_blank" href="https://cloud.codream.top/">
+                        <a target="_blank" href="https://cloud.codream.top/">
                             <div class="item">
-                                <div class="logo"><img src="img/OJ.ico" > 青大OJ镜像平台</div>
+                                <div class="logo"><img src="img/OJ.ico"> 青大OJ镜像平台</div>
                                 <div class="desc">嗯，私人COPY模拟平台，适应一下环境也可</div>
                             </div>
                         </a>
-						<a target="_blank" href="http://cloud.codream.top/owncloud">
+                        <a target="_blank" href="http://cloud.codream.top/owncloud">
                             <div class="item">
                                 <div class="logo"><img src="img/owncloud.ico" alt="OwnCloud"> 私有云</div>
                                 <div class="desc">私有云，不打算对外开放，需要的联系作者</div>
                             </div>
                         </a>
-						<a target="_blank" href="http://cloud.codream.top:1836">
+                        <a target="_blank" href="http://cloud.codream.top:1836">
                             <div class="item">
-                                <div class="logo"><img src="img/ssr.ico" > 云梯查询</div>
+                                <div class="logo"><img src="img/ssr.ico"> 云梯查询</div>
                                 <div class="desc">维瓶恩管理面板</div>
                             </div>
                         </a>
@@ -179,7 +282,7 @@ if (localStorage.pagecount){    localStorage.pagecount=Number(localStorage.pagec
                                 <div class="desc">网易公司研发的一款大型在线教育平台服务</div>
                             </div>
                         </a>
-						<a target="_blank" href="https://www.gitbook.com/">
+                        <a target="_blank" href="https://www.gitbook.com/">
                             <div class="item">
                                 <div class="no-logo">GitBook</div>
                                 <div class="desc">GitHub主办的开源图书馆</div>
@@ -267,7 +370,7 @@ if (localStorage.pagecount){    localStorage.pagecount=Number(localStorage.pagec
                         <div><i class="iconfont icon-wendangdocument78"></i>参考文档</div>
                     </div>
                     <div>
-						<a target="_blank" href="http://search.chongbuluo.com/">
+                        <a target="_blank" href="http://search.chongbuluo.com/">
                             <div class="item">
                                 <div class="logo"><img src="img/chongbuluo.ico" alt="serch"> 虫部落</div>
                                 <div class="desc">整合了各种搜索引擎</div>
@@ -305,12 +408,12 @@ if (localStorage.pagecount){    localStorage.pagecount=Number(localStorage.pagec
                                 <div class="no-logo">bootstrap可视化布局</div>
                             </div>
                         </a>
-						<a target="_blank" href="http://www.ip111.cn/">
+                        <a target="_blank" href="http://www.ip111.cn/">
                             <div class="item">
                                 <div class="no-logo">全面个人IP查询</div>
                             </div>
                         </a>
-						<a target="_blank" href="http://tool.chinaz.com/Tools/onlinecolor.aspx">
+                        <a target="_blank" href="http://tool.chinaz.com/Tools/onlinecolor.aspx">
                             <div class="item">
                                 <div class="no-logo">在线调色板</div>
                             </div>
@@ -356,92 +459,96 @@ if (localStorage.pagecount){    localStorage.pagecount=Number(localStorage.pagec
                         </div>
                     </div>
                 </footer>
-                <div id="fixedBar"><svg class="Zi Zi--BackToTop" title="回到顶部" fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path></svg></div>
+                <div id="fixedBar"><svg class="Zi Zi--BackToTop" title="回到顶部" fill="currentColor" viewBox="0 0 24 24"
+                        width="24" height="24">
+                        <path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path>
+                    </svg></div>
         </section>
-        <script src="js/jquery.js"></script>
         <script>
-        var oMenu = document.getElementById('menu');
-        var oLeftBar = document.getElementById('leftBar');
-        var menuFrom = document.getElementById('menu-form');
+            var oMenu = document.getElementById('menu');
+            var oLeftBar = document.getElementById('leftBar');
+            var menuFrom = document.getElementById('menu-form');
 
-        oMenu.onclick = function() {
-            if (oLeftBar.offsetLeft == 0) {
-                oLeftBar.style.left = -249 + 'px';
-            }
-            else {
-                oLeftBar.style.left = 0;
-            }
-        }
-
-
-        // 监听页面宽度变化
-        window.onresize = function() {
-            judgeWidth();
-            // console.log(document.documentElement.clientWidth);
-        };
-
-        // 判断页面宽度
-        function judgeWidth() {
-            if (document.documentElement.clientWidth > 481) {
-                oLeftBar.style.left = 0;
-            } else {
-                oLeftBar.style.left = -249 + 'px';
-            }
-        }
-
-
-        var oNavItem = document.getElementById('navItem');
-        var aA = oNavItem.getElementsByTagName('a');
-        for (var i = 0; i < aA.length; i++) {
-            aA[i].onclick = function() {
-                for (var j = 0; j < aA.length; j++) {
-                    aA[j].className = '';
-                }
-                this.className = 'active';
+            oMenu.onclick = function () {
                 if (oLeftBar.offsetLeft == 0) {
-                    if (document.documentElement.clientWidth <= 481) {
-                        oLeftBar.style.left = -249 + 'px';
-                        menuFrom.checked = false;
+                    oLeftBar.style.left = -249 + 'px';
+                } else {
+                    oLeftBar.style.left = 0;
+                }
+            }
 
+
+            // 监听页面宽度变化
+            window.onresize = function () {
+                judgeWidth();
+                // console.log(document.documentElement.clientWidth);
+            };
+
+            // 判断页面宽度
+            function judgeWidth() {
+                if (document.documentElement.clientWidth > 481) {
+                    oLeftBar.style.left = 0;
+                } else {
+                    oLeftBar.style.left = -249 + 'px';
+                }
+            }
+
+
+            var oNavItem = document.getElementById('navItem');
+            var aA = oNavItem.getElementsByTagName('a');
+            for (var i = 0; i < aA.length; i++) {
+                aA[i].onclick = function () {
+                    for (var j = 0; j < aA.length; j++) {
+                        aA[j].className = '';
+                    }
+                    this.className = 'active';
+                    if (oLeftBar.offsetLeft == 0) {
+                        if (document.documentElement.clientWidth <= 481) {
+                            oLeftBar.style.left = -249 + 'px';
+                            menuFrom.checked = false;
+
+                        }
                     }
                 }
             }
-        }
 
 
-        $(window).scroll(function() {
-            if($(window).scrollTop() >= 200){
-                $('#fixedBar').fadeIn(300);
-            }else{
-                $('#fixedBar').fadeOut(300);
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= 200) {
+                    $('#fixedBar').fadeIn(300);
+                } else {
+                    $('#fixedBar').fadeOut(300);
+                }
+            });
+            $('#fixedBar').click(function () {
+                $('html,body').animate({
+                    scrollTop: '0px'
+                }, 800);
+            })
+            //文字横向滚动
+            function ScrollImgLeft() {
+                var speed = 50;
+                var MyMar = null;
+                var scroll_begin = document.getElementById("scroll_begin");
+                var scroll_end = document.getElementById("scroll_end");
+                var scroll_div = document.getElementById("scroll_div");
+                scroll_end.innerHTML = scroll_begin.innerHTML;
+
+                function Marquee() {
+                    if (scroll_end.offsetWidth - scroll_div.scrollLeft <= 0)
+                        scroll_div.scrollLeft -= scroll_begin.offsetWidth;
+                    else
+                        scroll_div.scrollLeft++;
+                }
+                MyMar = setInterval(Marquee, speed);
+                scroll_div.onmouseover = function () {
+                    clearInterval(MyMar);
+                }
+                scroll_div.onmouseout = function () {
+                    MyMar = setInterval(Marquee, speed);
+                }
             }
-        });
-        $('#fixedBar').click(function() {
-            $('html,body').animate({scrollTop:'0px'},800);
-        })
-		//文字横向滚动
-function ScrollImgLeft(){ 
- var speed=50;
-  var MyMar = null;
- var scroll_begin = document.getElementById("scroll_begin"); 
- var scroll_end = document.getElementById("scroll_end"); 
- var scroll_div = document.getElementById("scroll_div"); 
- scroll_end.innerHTML=scroll_begin.innerHTML; 
- function Marquee(){ 
-  if(scroll_end.offsetWidth-scroll_div.scrollLeft<=0) 
-   scroll_div.scrollLeft-=scroll_begin.offsetWidth; 
-  else
-   scroll_div.scrollLeft++; 
-  } 
-  MyMar=setInterval(Marquee,speed); 
-  scroll_div.onmouseover = function(){
-　　　　　　　clearInterval(MyMar);
-　　　　　}
- 　　　　scroll_div.onmouseout = function(){
-　　　　　　　MyMar = setInterval(Marquee,speed); 　　　　
-　　　　　}  
-}
-ScrollImgLeft();
+            ScrollImgLeft();
         </script>
 </body>
 
