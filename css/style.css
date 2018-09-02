@@ -131,8 +131,14 @@ body {
  overflow:hidden;
  margin:20px 30px;
  background:#fff;
- padding-bottom:20px
-}
+ padding-bottom:20px;
+ /* 阴影效果 */
+ box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset,
+ 0 .5em 1em rgba(0, 0, 0, 0.6);
+ text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
+ /*磨砂玻璃效果*/
+ background: hsla(0,0%,100%,.25) border-box;
+ }
 .main .box .sub-category>div {
  padding:12px 0 0 2.1%;
  font-size:18px
@@ -155,7 +161,7 @@ body {
 }
 .main .box .item .no-logo {
  color:#3df73dc;
- font-weight:700;
+ font: weight 700px;
  font-size:14px
 }
 .main .box .item .logo {
