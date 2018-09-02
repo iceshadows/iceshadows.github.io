@@ -13,7 +13,6 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="js/jquery.cookie.js"></script>
     <!--背景 图片拉伸并布满整个屏幕-->
     <style type="text/css">
     body{
@@ -21,77 +20,12 @@
         background-size:cover;
         background-attachment:fixed;
         background-color:#CCCCCC;
-     
      }
      </style>
-    <!--弹窗广告实现-->
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .alert_windows {
-            display: none;
-            position: absolute;
-            z-index: 10;
-            width: 400px;
-            height: 300px;
-            background: darkslategrey;
-        }
-
-        .alert_windows span {
-            float: right;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            font: 15px/30px Microsoft Yahei;
-            cursor: progress ;
-            color:#333;
-            background : lightblue;
-        }
-
-        .alert_windows image {
-            width: 100%;
-            height: 100%;
-        }
-
-        .alert_windows span:hover {
-            color: #EEE;
-            background: red;
-        }
-    </style>
-    <!--轮播公告效果-->
-    <script type="text/javascript">
-        $(function () {
-            if ($.cookie("isClose") != 'yes') {
-                var winWid = $(window).width() / 2 - $('.alert_windows').width() / 2;
-                var winHig = $(window).height() / 2 - $('.alert_windows').height() / 2;
-                $(".alert_windows").css({
-                    "left": winWid,
-                    "top": -winHig * 2
-                }); //自上而下
-                $(".alert_windows").show();
-                $(".alert_windows").animate({
-                    "left": winWid,
-                    "top": winHig
-                }, 1000);
-                $(".alert_windows span").click(function () {
-                    $(this).parent().fadeOut(500);
-                    $.cookie("isClose", 'yes', {
-                        expires: 1 / 8640
-                    }); //测试十秒
-                });
-            }
-        });
-    </script>
+    
 </head>
 
 <body background="background.jpg">
-    <!--弹窗广告内容 感谢@秋叶随风、@李同学 @Eve-->
-    <div class="alert_windows">
-        <image><img src="img/tuiguang1.jpg"></image> <span>X</span>
-    </div>
     <script type="text/javascript">
         function stop() {
             return false;
@@ -106,8 +40,6 @@
                 <p>青岛大学数软学院</p>
             </div>
             <nav class="nav">
-                <div class="item active"><a href="">Iceshdaow制作整合</a><i class="line"></i>
-                </div>
                 <!--本地计数器实现-->
                 <script type="text/javascript">
                     if (localStorage.pagecount) {
