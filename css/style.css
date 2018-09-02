@@ -61,7 +61,7 @@ body {
 }
 /*侧栏统计*/
 .left-bar .nav {
- color:#336666;
+ color:#1fc564;
  flex:1;
  -webkit-box-flex:1;
  flex-grow:1
@@ -128,7 +128,7 @@ body {
  z-index:100;
  bottom:1px;
  width:200px;
- background:#336666
+ background:#33666673
 }
 .main #mainContent {
  max-width:1200px
