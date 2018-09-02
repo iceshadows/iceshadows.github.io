@@ -16,10 +16,12 @@ body {
 .container,.main,body {
  background-image:"background.jpg"
 }
+/* 矢量图标 */
 .iconfont {
  color:#6b7386;
  padding-right:4px
 }
+/*侧栏主体*/
 .container .left-bar {
  position:fixed;
  padding:0 20px;
@@ -38,6 +40,7 @@ body {
  -webkit-box-orient:vertical;
  margin-left:248px
 }
+/*导航主页图标*/
 .container .main .iconfont {
  font-size:18px;
  color:#000
@@ -56,6 +59,7 @@ body {
 .left-bar .title p {
  text-align:center
 }
+/*侧栏统计*/
 .left-bar .nav {
  color:#336666;
  flex:1;
@@ -107,6 +111,7 @@ body {
 .left-bar .nav-item li:hover a,.left-bar .nav-item li:hover i,.left-bar .nav-item li>.active,.left-bar .nav-item li>.active i {
  color:#fff
 }
+/*侧栏导航文字*/
 .left-bar .nav-item li a {
  text-decoration:none;
  font-size:12px;
@@ -117,6 +122,7 @@ body {
 .nav .item a {
  color:#fff
 }
+/*侧栏开发者Box*/
 .nav .comment {
  position:fixed;
  z-index:100;
