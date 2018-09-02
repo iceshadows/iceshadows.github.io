@@ -18,7 +18,11 @@ body {
     position: absolute;
     width: 100px;
     height: 100px;
-    background: #ccc
+    background: #ccc;
+    z-index: 100000;
+    font-size: 12px;
+    text-align: end;
+    
 }
 .container,.main,body {
  background-image:"background.jpg"
