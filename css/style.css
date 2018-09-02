@@ -23,7 +23,7 @@ body {
 .container .left-bar {
  position:fixed;
  padding:0 20px;
- background-color:#336666;
+ background-color:#33666679;
  box-sizing:border-box;
  flex-direction:column;
  height:100vh;
@@ -159,10 +159,10 @@ body {
 .main .box .item:hover {
  transform:translateY(-5px)
 }
-.main .box .item .no-logo {
+.main .box .item.no-logo {
  color:#3df73dc;
  font: weight 700px;
- font-size:14px
+ font-size:14px;
 }
 .main .box .item .logo {
  height:40px;
@@ -217,7 +217,7 @@ body {
  top:0;
  z-index:2;
  box-shadow:1px 1px 8px #e0ddf;
- height:50px
+ height:50px;
 }
 #menu-box #menu {
  height:50px;
