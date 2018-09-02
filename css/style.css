@@ -13,6 +13,13 @@ body {
  color:#4d4d4d;
  font-family:Helvetica Neue,Microsoft Yahei
 }
+/* 随屏滚动广告 */
+.floatingad {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #ccc
+}
 .container,.main,body {
  background-image:"background.jpg"
 }

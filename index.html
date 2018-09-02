@@ -26,29 +26,14 @@
 </head>
 
 <body background="background.jpg">
-    <script type="text/javascript">
-        function stop() {
-            return false;
-        }
-        document.oncontextmenu = stop;
-    </script>
-
-
+        <div class="floatingad" id="box1" style="top:0;left:0;"><img src="./img/tuiguang_index.jpg"></div>
+        <div class="floatingad" id="box2" style="top:0;right:0;">AD2</div>
     <div class="container" id="container">
         <aside class="left-bar" id="leftBar">
             <div class="title">
                 <p>青岛大学数软学院</p>
             </div>
             <nav class="nav">
-                <!--本地计数器实现-->
-                <script type="text/javascript">
-                    if (localStorage.pagecount) {
-                        localStorage.pagecount = Number(localStorage.pagecount) + 1;
-                    } else {
-                        localStorage.pagecount = 1;
-                    }
-                    document.write("访问数: " + localStorage.pagecount + " 次.");
-                </script>
                 <ul class="nav-item" id="navItem">
                     <li><a href="#wechat" class="active"><i class="iconfont icon-weixin"></i>公众平台</a></li>
                     <li><a href="#class" class="active"><i class="iconfont icon-daohang2"></i>我在数软</a></li>
@@ -391,6 +376,37 @@
                         <path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path>
                     </svg></div>
         </section>
+         <!--本地计数器实现-->
+         <script type="text/javascript">
+            if (localStorage.pagecount) {
+                localStorage.pagecount = Number(localStorage.pagecount) + 1;
+            } else {
+                localStorage.pagecount = 1;
+            }
+            document.write("访问数: " + localStorage.pagecount + " 次.");
+        </script>
+        <!--随屏滚动广告-->
+        <script type="text/javascript"> 
+            var id=function(o){return document.getElementById(o)}
+            var scroll=function (o){
+             var space=id(o).offsetTop;
+             id(o).style.top=space+'px';
+             void function(){
+               var goTo = 0;
+               var roll=setInterval(function(){
+                var height =document.documentElement.scrollTop+document.body.scrollTop+space;
+                var top = parseInt(id(o).style.top);
+                if(height!= top){
+                 goTo = height-parseInt((height - top)*0.9);
+                 id(o).style.top=goTo+'px';
+                }
+                //else{if(roll) clearInterval(roll);}
+               },50);
+             }()
+            }
+            scroll('box1');
+            scroll('box2');
+            </script>
         <script>
             var oMenu = document.getElementById('menu');
             var oLeftBar = document.getElementById('leftBar');
