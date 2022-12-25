@@ -47,6 +47,12 @@
 
       card.style.transform = "rotateY(" + x + "deg) rotateX(" + y + "deg)";
     });
+    container.addEventListener("touchmove", (rotate) => {
+      let x = (innerWidth / 2 - rotate.pageX) / 15;
+      let y = (innerHeight / 2 - rotate.pageY) / 15;
+
+      card.style.transform = "rotateY(" + x + "deg) rotateX(" + y + "deg)";
+    });
 
     //card effects on mouse over the card
     container.addEventListener("mouseover", () => {
