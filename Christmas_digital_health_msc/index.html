@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Merry Christmas-  Linus</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
 
-    <div class="container">
-      <div class="card">
-        <div class="card-bg">
-          <img src="img/card-bg.jpg" alt="">
-        </div>
-        <div class="title">
-          <h2>Merry</h2>
-          <h1>Christmas</h1>
-          <h3>& Happy New Year</h3>
-          <h1>2022</h1>
-        </div>
-        <div class="images">
-          <img src="img/santa.png" class="santa" alt="">
-          <img src="img/tree.png" class="tree" alt="">
-          <img src="img/digital-health-logo.svg" class="corona" alt="">
-          <img src="img/corona11.png" class="corona1" alt="">
-          <div class="title1">
-            <center>
-          <h2 >by</h2>
-              <h3>Linus Zhang</h3>
-            </center>
-          </div>
-        </div>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <title>Merry Christmas- Linus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="snow-container">
+      <div class="snow foreground"></div>
+      <div class="snow foreground layer"></div>
+      <!--延迟衔接-->
+      <div class="snow medium"></div>
+      <div class="snow medium layer"></div>
+      <div class="snow background"></div>
+      <div class="snow background layer"></div>
     </div>
-    
-    <script type="text/javascript">
+    <div class="card">
+      <div class="card-bg">
+        <img src="img/card-bg.jpg" alt="">
+      </div>
+      <div class="title">
+        <h2>Merry</h2>
+        <h1>Christmas</h1>
+        <h3>& Happy New Year</h3>
+        <h1>2022</h1>
+      </div>
+      <div class="images">
+        <img src="img/santa.png" class="santa" alt="">
+        <img src="img/tree.png" class="tree" alt="">
+        <img src="img/digital-health-logo.svg" class="corona" alt="">
+        <img src="img/corona11.png" class="corona1" alt="">
+        <div class="title1">
+          <h2>by</h2>
+            <h3>Linus Zhang</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
     const container = document.querySelector(".container");
     const card = document.querySelector(".card");
     const title = document.querySelector(".title");
@@ -70,8 +80,8 @@
       santa.style.transform = "translate3d(0, 0, 0)";
       tree.style.transform = "translate3d(0, 0, 0)";
     });
-    </script>
+  </script>
 
-  </body>
+</body>
+
 </html>
-                           
