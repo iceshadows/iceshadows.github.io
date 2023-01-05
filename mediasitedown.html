@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title>Mediasite Downloader</title>
+  <style>
+    body {
+      font-family: "Arial";
+    }
+    
+    #wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .button {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      padding: 25px 60px;
+      margin: 0;
+      font-size: 50px;
+      line-height: 60px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      color: transparent;
+      box-shadow: 0 0 0 1px #2DC6D6;
+      border: 0;
+      background: #fff;
+      cursor: alias;
+      position: relative;
+    }
+
+    #bmarklet::after {
+      content: '+ Drag to install';
+      color: #2DC6D6;
+      position: absolute;
+      left: 30px;
+    }
+    
+    ol {
+      width: 600px;
+      padding-bottom: 10px;
+      font-size: 20px;
+      color: #818181;
+    }
+    
+    ol li {
+      padding-bottom: 8px;
+    }
+
+    .noticeTutorial {
+      width: 600px;
+      color: #818181;
+      padding-top: 70px;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <ol start="0">
+      <li>(Mobile devices are not supported)</li>
+      <li>Drag the button below onto your browsers bookmarks bar</li>
+      <li>Open a Mediasite lecture</li>
+      <li>Click on newly added bookmark</li>
+      <li>A dialog will pop up: Copy the title of the lecture, right-click on the thumbnail(s), "Save (link) as..." and paste in the copied title to rename the file</li>
+      <li>Download begins</li>
+    </ol>
+
+    <a id="bmarklet" class="button" href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://static.gb.qduwo.xyz/mediasitedown.js?%27+new Date().getTime();})();">MediasiteDownloadHelper</a>
+
+    <div class="noticeTutorial">Copyright @2023 by <a href="https://iceshadows.github.io">Linus Zhang</a></div>
+  </div>
+</body>
+</html>
